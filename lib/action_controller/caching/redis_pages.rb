@@ -17,7 +17,7 @@ module ActionController
           return unless (RedisPage.cache_relation_redis && RedisPage.cache_page_redis)
           options = actions.extract_options!
 
-          before_filter({only: actions}.merge(options)) do |c|
+          before_action({only: actions}.merge(options)) do |c|
             @page_need_to_cache = true
             if options[:append_country]
               # X-IP-Country 是通过 nginx GeoIP2 module 注入的 header
@@ -25,7 +25,7 @@ module ActionController
             end
           end
 
-          after_filter({only: actions}.merge(options)) do |c|
+          after_action({only: actions}.merge(options)) do |c|
             path = [request.path, @cache_country, RedisPage.compress_method].compact.join('-')
             c.cache_redis_page(compress_content(response.body), path, options)
             c.record_cached_page
