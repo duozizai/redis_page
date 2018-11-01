@@ -24,7 +24,7 @@ Gem::Specification.new do |spec|
   spec.require_paths = ["lib"]
 
   spec.add_dependency "activesupport", "~> 4.0.9"
-  spec.add_dependency "actionpack", "~> 4.0.9"
+  spec.add_dependency "actionpack", "= 5.1.2"
   spec.add_dependency "sidekiq", "~> 3.2.6"
   spec.add_dependency "sidekiq-unique-jobs", "~> 4.0.17"
 
