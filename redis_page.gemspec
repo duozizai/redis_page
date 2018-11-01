@@ -23,8 +23,8 @@ Gem::Specification.new do |spec|
   spec.executables   = spec.files.grep(%r{^exe/}) { |f| File.basename(f) }
   spec.require_paths = ["lib"]
 
-  spec.add_dependency "activesupport", "~> 4.0.9"
-  spec.add_dependency "actionpack", "= 5.1.2"
+  spec.add_dependency "activesupport"
+  spec.add_dependency "actionpack"
   spec.add_dependency "sidekiq", "~> 3.2.6"
   spec.add_dependency "sidekiq-unique-jobs", "~> 4.0.17"
 
